@@ -16,6 +16,13 @@
                         </div>
                     </li>
                     @endforeach
+                    <li class="nav-item my-1">
+                        <div class="links ms-auto ">
+                            <a class="mx-3" href="{{route('comics.index')}}">
+                               ADMIN
+                            </a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
