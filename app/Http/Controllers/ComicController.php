@@ -56,6 +56,8 @@ class ComicController extends Controller
         $comic->sale_date = $request['sale_date'];
         $comic->type = $request['type'];
         $comic->save();
+
+        return redirect()->route('comics.index');
     }
 
     /**
