@@ -1,0 +1,62 @@
+@use './variables.scss' as *;
+
+
+footer{
+    
+    .list{
+        background-image: url(../img/footer-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        ul{
+            list-style: none;
+            padding-left: 0;
+        }
+        a{
+            text-decoration: none;
+            color: $link;
+            &:hover{
+                color: $light;
+            }
+        }
+        p{
+            color: $link;
+            span{
+                color: $accent;
+            }
+        }
+        .font{
+            
+            color: $link;
+        }
+        .back{
+            background-image: url(../img/dc-logo-bg.png);
+            background-repeat: no-repeat;
+            background-position: center right;
+        }
+    
+    }
+
+
+    .allSocials{
+
+        .container{
+            padding: 2rem 0;
+        }
+        background-color: $primary;
+    
+        .my_btn{
+            display: inline-block;
+            padding: 0.3rem;
+            border: 2px solid $accent;
+            color: $light;
+            font-size: 0.85rem;
+        }
+        .blue{
+            color: $accent;
+        }
+        .social *{
+            margin: 0 0.30rem;
+        }
+    }
+}

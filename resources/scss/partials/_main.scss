@@ -1,0 +1,43 @@
+@use './variables.scss' as *;
+
+.jumbotron{
+    height: 400px;
+    width: 100%;
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+}
+
+.my_grid{
+    background-color: $dark;
+    color: $light;
+    
+    .my_btn{
+        font-size: 2rem;
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background-color: $accent;
+        color: $light;
+        font-weight: bolder;
+        position: absolute;
+        top: -2rem;
+        left: 0;
+    }
+}
+.banner_blue{
+    background-color: $accent; 
+    height: 80px;
+
+    .my_icon{
+        
+        display: inline-block;
+        
+        color: $light;
+        font-weight: bolder;
+        position: absolute;
+        top: -2rem;
+        left: 0;
+        
+    }
+
+}
+

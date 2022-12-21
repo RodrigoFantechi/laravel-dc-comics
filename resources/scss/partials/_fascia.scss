@@ -1,0 +1,18 @@
+@use './variables.scss' as *;
+
+.linked{
+    background-color: $accent;
+
+    img{
+        height: 50px;
+        width: auto;
+    }
+    a{
+        text-decoration: none;
+        color: $light;
+
+        &:hover{
+            color: $light; 
+        }
+    }
+}

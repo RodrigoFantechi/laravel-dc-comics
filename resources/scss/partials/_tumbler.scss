@@ -1,0 +1,19 @@
+@use './variables.scss' as *;
+
+.my_card {
+
+    .image_card {
+
+        img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position:  top;
+        }
+
+    }
+
+    h6 {
+        text-transform: uppercase;
+    }
+}
