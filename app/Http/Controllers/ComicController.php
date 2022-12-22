@@ -68,7 +68,12 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('admin.comics.show', compact('comic'));
+        $data =[
+            'tumblers' => Comic::all(),
+            'nav_links' => config('links.header_links'),
+            'links' => config('links.Footer_links'),
+        ];
+        return view('guest.show',$data, compact('comic'));
     }
 
     /**
