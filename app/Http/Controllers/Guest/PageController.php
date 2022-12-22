@@ -10,21 +10,12 @@ class PageController extends Controller
 {
     public function index()
     {
-        $data =[
-            'tumblers' => Comic::all(),
-            'nav_links' => config('links.header_links'),
-            'links' => config('links.Footer_links'),
-        ];
-        
-        return view('guest.index',$data);
+            $tumblers = Comic::all();
+        return view('guest.index', compact('tumblers'));
     }
 
     public function show(Comic $comic)
     {
-        $data =[
-            'nav_links' => config('links.header_links'),
-            'links' => config('links.Footer_links'),
-        ];
-        return view('guest.show',$data, compact('comic'));
+        return view('guest.show', compact('comic'));
     }
 }

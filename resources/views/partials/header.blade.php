@@ -1,3 +1,7 @@
+<?php
+$nav_links = config('links.header_links');
+?>
+
 <header>
     <nav class="navbar navbar-expand-lg p-3">
         <div class="container">

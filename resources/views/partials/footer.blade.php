@@ -1,3 +1,6 @@
+<?php
+$links = config('links.Footer_links');
+?>
 <footer id="site-footer">
 
     <section class="list">

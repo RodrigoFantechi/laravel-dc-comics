@@ -15,13 +15,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $data =[
-            'tumblers' => Comic::all(),
-            'nav_links' => config('links.header_links'),
-            'links' => config('links.Footer_links'),
-        ];
         $comics = Comic::orderByDesc('id')->get();
-        return view('admin.comics.index',$data, compact('comics'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -31,12 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        $data =[
-            'tumblers' => Comic::all(),
-            'nav_links' => config('links.header_links'),
-            'links' => config('links.Footer_links'),
-        ];
-        return view('admin.comics.create', $data);
+        return view('admin.comics.create');
     }
 
     /**
@@ -68,12 +58,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        $data =[
-            'tumblers' => Comic::all(),
-            'nav_links' => config('links.header_links'),
-            'links' => config('links.Footer_links'),
-        ];
-        return view('guest.show',$data, compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
@@ -84,7 +69,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
