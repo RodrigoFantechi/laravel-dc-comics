@@ -81,7 +81,8 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        //
+        
+        return to_route('comics.index');
     }
 
     /**

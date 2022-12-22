@@ -1,11 +1,10 @@
-
 @extends('layout.app')
 
 @section('content')
 
 
 <div class="container mb-5">
-    <h1 class="py-5">Update product: {{$comic->title}}</h1>
+    <h1 class="py-5">Update comic: {{$comic->title}}</h1>
     <form action="{{route('comics.update', $comic->id)}}" method="post" class="card p-3">
         @csrf
         @method('PUT')
@@ -14,12 +13,18 @@
             <label for="title" class="form-label">Title</label>
             <input type="text" name="title" id="title" class="form-control" placeholder="add title" aria-describedby="titleHlper" value="{{$comic->title}}">
             <small id="titleHlper" class="text-muted">Add the comic title here</small>
+            
         </div>
-        <div class="mb-3">
+
+        <div class="mb-3 d-flex">
+            <div class="img-preview py-3">
+                <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+            </div>
+            <div class="control align-self-center p-3 w-100">
             <label for="thumb" class="form-label">Comic Image</label>
             <input type="text" name="thumb" id="thumb" class="form-control" placeholder="add url" aria-describedby="thumbHlper" value="{{$comic->thumb}}">
             <small id="thumbHlper" class="text-muted">Add the thumb here</small>
-            <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+            </div>
         </div>
 
         <div class="mb-3">
@@ -46,8 +51,8 @@
             <input type="text" name="type" id="type" class="form-control" placeholder="add type" aria-describedby="typeHlper" value="{{$comic->type}}">
             <small id="typeHlper" class="text-muted">Add the comic type here</small>
         </div>
-    
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <button type="submit" class="btn btn-primary">Modify</button>
 
     </form>
 </div>
