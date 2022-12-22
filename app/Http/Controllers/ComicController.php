@@ -47,7 +47,7 @@ class ComicController extends Controller
         $comic->type = $request['type'];
         $comic->save();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('message', "$comic->title add successfully");
     }
 
     /**
@@ -81,9 +81,18 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        
-        return to_route('comics.index');
-    }
+        $data = [
+       'title' => $request['title'],
+        'description' => $request['description'],
+        'thumb' => $request['thumb'],
+        'price' => $request['price'],
+        'series' => $request['series'],
+        'sale_date' => $request['sale_date'],
+        'type' => $request['type'],
+        ];
+        $comic->update($data);
+        return to_route('comics.index')->with('message', "$comic->title update successfully");
+    }    
 
     /**
      * Remove the specified resource from storage.
@@ -93,6 +102,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('comics.index')->with('message', "$comic->title deleted successfully");
     }
 }
