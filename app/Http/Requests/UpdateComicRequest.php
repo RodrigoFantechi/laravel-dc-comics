@@ -30,7 +30,7 @@ class UpdateComicRequest extends FormRequest
                 'min:5',
                 'max:80'
             ],
-            'description' => 'required|max:80',
+            'description' => 'required',
             'thumb' => 'required|max:250',
             'price' => 'required|max:8',
         ];
@@ -44,7 +44,6 @@ class UpdateComicRequest extends FormRequest
             'thumb.required' => "Non pui cancellare questo campo. L'immagine è obbligatoria",
             'thumb.max' => "L'immagine puó essere massimo :max caratteri",
             'description.required' => 'Non pui cancellare questo campo. La descrizione è obbligatoria',
-            'description.max' => 'La descrizione deve essere massimo :max caratteri',
             'price.required' => 'Non pui cancellare questo campo. Il prezzo è obbligatorio',
             'price.max' => 'Il prezzo puó essere massimo :max caratteri'
         ];
