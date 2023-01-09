@@ -12,7 +12,7 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">Title <strong class="text-danger">*</strong></label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="add title" aria-describedby="titleHlper" value="{{old('title', $comic->title)}}">
+            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="add title" aria-describedby="titleHlper" value="{{old('title', $comic->title)}}">
             <small id="titleHlper" class="text-muted">Add the comic title here</small>
             
         </div>
@@ -23,18 +23,18 @@
             </div>
             <div class="control align-self-center p-3 w-100">
             <label for="thumb" class="form-label">Comic Image <strong class="text-danger">*</strong></label>
-            <input type="text" name="thumb" id="thumb" class="form-control" placeholder="add url" aria-describedby="thumbHlper" value="{{old('thumb', $comic->thumb)}}">
+            <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="add url" aria-describedby="thumbHlper" value="{{old('thumb', $comic->thumb)}}">
             <small id="thumbHlper" class="text-muted">Add the thumb here</small>
             </div>
         </div>
 
         <div class="mb-3">
             <label for="description" class="form-label">Description <strong class="text-danger">*</strong></label>
-            <textarea class="form-control" name="description" id="description" rows="4">{{ old('description', $comic->description,)}}</textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="4">{{ old('description', $comic->description,)}}</textarea>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price <strong class="text-danger">*</strong></label>
-            <input type="text" name="price" id="price" class="form-control" placeholder="add price" aria-describedby="priceHlper" value="{{old('price', $comic->price)}}">
+            <input type="text" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="add price" aria-describedby="priceHlper" value="{{old('price', $comic->price)}}">
             <small id="priceHlper" class="text-muted">Add the comic price here</small>
         </div>
         <div class="mb-3">
